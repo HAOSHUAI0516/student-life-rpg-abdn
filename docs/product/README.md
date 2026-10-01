@@ -1,15 +1,13 @@
 # Product Documentation
 
-Student Life RPG combines academic planning, personal finance and RPG progression into a university-life management experience.
+> Engineering specification baseline · 1 October 2026
 
-## Planned documents
+| Document | Purpose |
+| --- | --- |
+| [Product overview](overview.md) | Users, scope and Alpha journey |
+| [Requirements](requirements.md) | Stable IDs, priorities and acceptance |
+| [User stories](user-stories.md) | Given / When / Then behavior |
 
-| Document | Covers | Status |
-| --- | --- | --- |
-| Product overview | Users, goals and Alpha scope | Planned |
-| Requirements | Functional and non-functional requirements | Planned |
-| User stories | User needs and acceptance criteria | Planned |
+These documents describe the agreed direction and proposed contracts. Code paths, running commands and execution results are filled only after verification. A completed specification is not an implemented or tested feature.
 
-The proposed Alpha focuses on RPG navigation, academic management, finance and player progression. Detailed scope will be recorded before implementation tasks are assigned.
-
-[Documentation index](../README.md)
+[Documentation hub](../README.md) · [Repository overview](../../README.md)

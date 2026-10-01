@@ -1,21 +1,13 @@
-# Project Management
+# Project Management Documentation
 
-Delivery planning, responsibilities and project risks.
+> Engineering specification baseline · 1 October 2026
 
-## Planned documents
+| Document | Purpose |
+| --- | --- |
+| [Roadmap](roadmap.md) | Delivery phases and exit gates |
+| [Responsibilities](team.md) | Ownership model and assignment record |
+| [Risks](risks.md) | Triggers and mitigation |
 
-| Document | Covers | Status |
-| --- | --- | --- |
-| Roadmap | Phases, priorities and exit criteria | Planned |
-| Team responsibilities | Module ownership and review responsibilities | Planned |
-| Risks | Delivery risks, owners and mitigation | Planned |
+These documents describe the agreed direction and proposed contracts. Code paths, running commands and execution results are filled only after verification. A completed specification is not an implemented or tested feature.
 
-## Delivery principles
-
-- Prioritize a complete local Alpha user journey.
-- Define acceptance criteria before development begins.
-- Keep work visible through issues and pull requests.
-- Track planned, implemented and verified status separately.
-- Confirm ownership and deadlines with the team before recording them as commitments.
-
-[Documentation index](../README.md)
+[Documentation hub](../README.md) · [Repository overview](../../README.md)

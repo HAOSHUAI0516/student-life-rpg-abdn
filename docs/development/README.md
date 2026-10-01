@@ -1,23 +1,13 @@
 # Development Documentation
 
-Reproducible setup, project structure and team collaboration.
+> Engineering specification baseline · 1 October 2026
 
-## Planned documents
+| Document | Purpose |
+| --- | --- |
+| [Setup record](setup.md) | Versions and commands intentionally blank |
+| [Project structure](project-structure.md) | Actual paths intentionally blank |
+| [Git workflow](git-workflow.md) | Issues, branches, review and completion |
 
-| Document | Covers | Status |
-| --- | --- | --- |
-| Setup guide | Required tools, commands and successful startup | Planned |
-| Project structure | Actual directories and module ownership | Planned |
-| Git workflow | Issues, branches, reviews and merges | Planned |
+These documents describe the agreed direction and proposed contracts. Code paths, running commands and execution results are filled only after verification. A completed specification is not an implemented or tested feature.
 
-## Collaboration baseline
-
-1. Create or select an issue with clear acceptance criteria.
-2. Develop on a dedicated branch.
-3. Open a pull request linked to the issue.
-4. Include validation evidence and relevant documentation updates.
-5. Obtain review before merging into `main`.
-
-Direct commits used to initialize this documentation are a bootstrap exception. Branch protection and automated checks have not been configured yet.
-
-[Documentation index](../README.md)
+[Documentation hub](../README.md) · [Repository overview](../../README.md)

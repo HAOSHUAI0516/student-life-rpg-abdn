@@ -9,12 +9,12 @@
 A gamified university-life application that brings academic planning,
 personal finance and RPG progression into one interactive experience.
 
-![Stage](https://img.shields.io/badge/Stage-Repository_Setup-7C3AED?style=flat-square)
+![Stage](https://img.shields.io/badge/Stage-Design_Baseline-7C3AED?style=flat-square)
 ![Approach](https://img.shields.io/badge/Alpha-Local_First-0F766E?style=flat-square)
 ![UI](https://img.shields.io/badge/Planned_UI-Flutter-02569B?style=flat-square)
 ![Storage](https://img.shields.io/badge/Planned_Storage-SQLite-003B57?style=flat-square)
 
-[Explore the docs](docs/README.md) · [Product](docs/product/README.md) · [Architecture](docs/architecture/README.md) · [Development](docs/development/README.md)
+[Documentation](docs/README.md) · [Product](docs/product/overview.md) · [Architecture](docs/architecture/architecture.md) · [Contributing](CONTRIBUTING.md)
 
 </div>
 
@@ -22,42 +22,36 @@ personal finance and RPG progression into one interactive experience.
 
 ## The idea
 
-University life is spread across timetables, deadlines, grades and spending records. **Student Life RPG** is designed to bring these together in a mobile application, with a pixel-art RPG world that connects everyday actions to visible character growth.
+University life is spread across timetables, deadlines, grades and spending records. **Student Life RPG** brings these responsibilities into a proposed mobile experience, with a pixel-art RPG world connecting everyday actions to character growth.
 
 **Plan your day. Complete meaningful tasks. Watch your character grow.**
 
-> **Current stage — repository foundation.** This repository currently contains the documentation structure. The modules and architecture below describe the proposed Alpha; application source code, a runnable build and executed test evidence have not yet been added here.
+> **Current baseline:** product requirements, architecture specifications, collaboration rules and test designs. Application source code and verified execution evidence are awaiting import. Actual code paths, running commands and test results are deliberately left blank.
 
 ## One world, four connected modules
 
 | Module | Student experience | Planned Alpha scope |
 | :--- | :--- | :--- |
-| **RPG World** | Explore a personal space and access everyday tools | Character movement, collision, interaction prompts, scene navigation and a fixed HUD |
-| **Academic** | Keep courses, deadlines and academic progress together | Courses, assignments, exams, calendar and credit-weighted GPA |
-| **Finance** | Understand where money goes | Income, expenses, budgets and basic summaries |
-| **Gamification** | Turn completed tasks into visible progress | Task completion, EXP, coins, levels and persisted player progress |
+| **RPG World** | Explore a personal space and access useful tools | Movement, collision, prompts, scene navigation and fixed HUD |
+| **Academic** | Keep academic obligations together | Semesters, courses, assignments, exams, calendar and GPA |
+| **Finance** | Understand everyday spending | Income, expenses, budgets and summaries |
+| **Gamification** | Make completed tasks visible | EXP, coins, levels and player progress |
 
-The proposed visual direction is a **portrait, 2.5D pixel-art experience**. Real application screenshots and a demo will be added after the existing implementation is imported and verified.
+The proposed visual direction is **portrait, 2.5D pixel art**. Real screenshots and demo evidence will be added after source import. AI, social features, multiplayer and complex farming remain outside Alpha scope.
 
-## A complete Alpha journey
+## The Alpha acceptance journey
 
-1. Create an academic task with a deadline.
-2. See it in the academic view and calendar.
-3. Mark the task as complete.
-4. Apply its reward once and update player progress.
-5. See the new EXP or level in the RPG HUD.
-6. Restart the app and retain the completed task and progress.
+Create an academic task, see it in the calendar, complete it, apply its reward once, refresh the HUD and restart without losing data.
 
-**Acceptance focus:** saved data survives restart, repeated completion cannot duplicate rewards, and the displayed state agrees with the stored state. These are delivery targets, not recorded test results.
+The acceptance gates require correct persisted values, no duplicate rewards and actionable failure feedback. Finance and GPA also have independent calculation checks.
+
+[Explore user stories →](docs/product/user-stories.md)
 
 ## Architecture at a glance
 
-The proposed Alpha uses a local Flutter application. Feature screens and RPG interactions access business logic through controllers; repository interfaces isolate persistence from the UI.
-
-
 ```mermaid
 flowchart TD
-  World["RPG world"] --> State["Controllers and business rules"]
+  World["RPG world"] --> State["Controllers and application rules"]
   Academic["Academic screens"] --> State
   Finance["Finance screens"] --> State
   State --> Records["Academic and finance repositories"]
@@ -66,64 +60,59 @@ flowchart TD
   Progress --> DB
 ```
 
-| Boundary | Responsibility |
-| :--- | :--- |
-| Presentation | Screens, forms, RPG rendering and user input |
-| Controllers and rules | Validation, GPA calculations, task completion and rewards |
-| Repository interfaces | Stable contracts for reading and updating feature data |
-| Local persistence | SQLite queries, transactions and migrations |
-
-**Future extension:** FastAPI, PostgreSQL, authentication and cloud synchronization will be evaluated in a later phase. Cloud synchronization requires an explicit design for identity, conflicts and offline updates.
-
-[Read the architecture documentation →](docs/architecture/README.md)
-
-## Documentation hub
-
-| Start here | What you will find | Current state |
+| Design choice | Reason | Consequence |
 | :--- | :--- | :--- |
-| [Documentation index](docs/README.md) | A single entry point to all engineering documents | Available |
-| [Product](docs/product/README.md) | Scope, requirements and acceptance criteria | Section initialized |
-| [Architecture](docs/architecture/README.md) | Proposed layers, data flows, schema and decisions | Section initialized |
-| [Development](docs/development/README.md) | Setup, actual code structure and Git workflow | Section initialized |
-| [Testing](docs/testing/README.md) | Test strategy, cases and verification evidence | Section initialized |
-| [Project management](docs/project-management/README.md) | Delivery phases, ownership and risks | Section initialized |
+| Local Alpha | Demonstrate a complete journey without mandatory cloud services | No cross-device synchronization yet |
+| Repository contracts | Separate UI from storage and make behavior testable | Shared contracts require coordinated review |
+| Atomic reward grant | Prevent duplicate rewards and partial progress updates | Completion and grant policy must be explicit |
+| Feature ownership | Keep most team changes within a module | Cross-feature workflows need an integration owner |
 
-Detailed documents will be linked as they are written and checked against the implementation.
+FastAPI, PostgreSQL, authentication and synchronization remain future options. Exact SDK, scene engine and state-management packages will be established after code audit.
+
+[Architecture](docs/architecture/architecture.md) · [Data flow](docs/architecture/data-flow.md) · [Database](docs/architecture/database-design.md) · [Decisions](docs/architecture/decisions.md)
+
+## Engineering documentation
+
+| Question | Document |
+| :--- | :--- |
+| What are we building? | [Product overview](docs/product/overview.md) |
+| What must it do? | [Requirements](docs/product/requirements.md) and [user stories](docs/product/user-stories.md) |
+| Why this design? | [Architecture decision records](docs/architecture/decisions.md) |
+| How do we collaborate? | [Contribution guide](CONTRIBUTING.md), [Git workflow](docs/development/git-workflow.md) and [responsibilities](docs/project-management/team.md) |
+| How do we verify it? | [Test strategy](docs/testing/strategy.md) and [21 designed test cases](docs/testing/test-cases.md) |
+| How do we deliver it? | [Roadmap](docs/project-management/roadmap.md) and [risk register](docs/project-management/risks.md) |
+
+[Browse the complete documentation hub →](docs/README.md)
 
 ## Delivery roadmap
 
-| Phase | Outcome | Exit criteria | Status |
-| :--- | :--- | :--- | :--- |
-| **01 · Foundation** | A readable repository and agreed collaboration process | Documentation index, contribution guide, issue and PR templates | In progress |
-| **02 · Runnable baseline** | Existing Flutter work imported and reproducible | Verified setup steps and a successful local run | Planned |
-| **03 · Connected Alpha** | Academic, finance and RPG progress work together | Core journeys persist data and provide correct feedback | Planned |
-| **04 · Verified demo** | A reviewable course-project release | Executed tests, applicable CI checks, screenshots and demo | Planned |
-| **05 · Cloud extension** | Evaluate accounts and synchronization | Approved architecture decision and a scoped implementation plan | Future |
+| Phase | Outcome | Exit gate |
+| :--- | :--- | :--- |
+| **Foundation** | Specifications and collaboration templates | Team review and open decisions assigned |
+| **Runnable baseline** | Existing app imported and reproducible | Clean checkout starts on selected target |
+| **Connected Alpha** | Academic, finance and RPG progression connected | P0 journeys persist correct data |
+| **Verified demo** | Executed checks, applicable CI and demo | Evidence names revision and environment |
+| **Cloud evaluation** | Assess accounts and synchronization | Approved separate scope and decision |
 
-## Development and contribution
+## Development and quality
 
-The team workflow is **Issue → Branch → Pull Request → Review → Merge**. Each development issue should define acceptance criteria; each PR should include validation evidence and update the affected documents.
+The working agreement is **Issue → Branch → PR → Review → Merge**. Link requirement and test IDs, keep one main issue active per contributor and review shared-contract changes with affected owners.
 
-The documentation setup uses direct commits as a bootstrap exception. Branch protection, issue templates, PR templates and CI are not configured yet.
+Feature, bug and engineering-task forms live in `.github/ISSUE_TEMPLATE/`; the PR template requests behavior, validation and review evidence. Branch protection and CI enforcement must be configured separately after source import.
 
 <details>
-<summary><strong>Running the application</strong></summary>
+<summary><strong>Implementation records awaiting verification</strong></summary>
 
-Application source code is not present in this repository yet. Exact prerequisites, working directories and startup commands will be published in the [development documentation](docs/development/README.md) after the code is imported and the commands are verified.
+- [Actual code structure](docs/development/project-structure.md): blank.
+- [Environment versions and running commands](docs/development/setup.md): blank.
+- [Test execution results](docs/testing/test-cases.md#execution-results): blank.
 
 </details>
 
 <details>
-<summary><strong>How we will demonstrate quality</strong></summary>
+<summary><strong>Planned quality evidence</strong></summary>
 
-- Link requirements to issues, implementation PRs and test cases.
-- Test GPA, budgets, task completion and reward rules.
-- Verify persistence and complete user journeys.
-- Check RPG movement, collision and interaction behavior.
-- Record the tested revision, result and supporting evidence.
-- Add automated checks once the application structure and SDK are confirmed.
-
-See the [testing documentation](docs/testing/README.md). No passing-test, coverage or CI claims are made before execution.
+Unit checks for GPA, budgets and rewards; repository checks for persistence, migrations and atomic updates; widget and integration checks for user journeys; manual checks for scene movement and interaction. Planned checks are not passing results.
 
 </details>
 

@@ -1,26 +1,33 @@
-# Student Life RPG · Documentation
+# Student Life RPG · Engineering Documentation
 
-Engineering documentation for a gamified university-life application.
+> Product, design and delivery baseline · 1 October 2026
 
-## Explore the documentation
+## Find an answer in two minutes
 
-| Area | Purpose |
+| Question | Start here |
 | --- | --- |
-| [Product](product/README.md) | Product scope, requirements and user stories |
-| [Architecture](architecture/README.md) | System boundaries, data flow and design decisions |
-| [Development](development/README.md) | Environment setup, code structure and collaboration |
-| [Testing](testing/README.md) | Test strategy, cases and acceptance evidence |
-| [Project management](project-management/README.md) | Roadmap, responsibilities and risks |
+| What are we building? | [Product overview](product/overview.md) |
+| What must it do? | [Requirements](product/requirements.md) and [user stories](product/user-stories.md) |
+| Why this architecture? | [System architecture](architecture/architecture.md) and [decision records](architecture/decisions.md) |
+| How does data move? | [Data flow](architecture/data-flow.md) and [database design](architecture/database-design.md) |
+| How do we collaborate? | [Git workflow](development/git-workflow.md) and [responsibilities](project-management/team.md) |
+| How do we verify it? | [Test strategy](testing/strategy.md) and [test cases](testing/test-cases.md) |
+| How do we deliver it? | [Roadmap](project-management/roadmap.md) and [risks](project-management/risks.md) |
 
-## Documentation status
+## Documentation map
 
-This commit initializes the documentation structure. Detailed specifications and implementation evidence will be added after the codebase is reviewed. Planned features are not claims of completed work.
+[Product](product/README.md) · [Architecture](architecture/README.md) · [Development](development/README.md) · [Testing](testing/README.md) · [Project management](project-management/README.md)
 
-## Working principles
+## Implementation records awaiting import
 
-- Keep documentation aligned with the actual code and current project decisions.
-- Distinguish planned, implemented and verified work.
-- Link requirements to issues, pull requests and test evidence.
-- Update relevant documents in the same pull request as the change.
+The [actual project structure](development/project-structure.md), [running commands](development/setup.md) and [test execution results](testing/test-cases.md#execution-results) are intentionally blank. Fill them from imported code and executed checks, not assumptions.
 
-[Back to the repository](../README.md)
+## Maintenance standard
+
+- Keep requirements stable and reference their IDs in issues and test cases.
+- Update affected specifications with the implementation PR.
+- Preserve proposed, implemented and verified status as separate concepts.
+- Record real issue/PR links and tested revisions when they exist.
+- Review shared-contract and design changes with affected module owners.
+
+[Repository overview](../README.md) · [Contributing](../CONTRIBUTING.md)
