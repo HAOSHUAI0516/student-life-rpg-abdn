@@ -1,0 +1,56 @@
+name: Feature request
+description: Define a scoped feature with acceptance criteria.
+title: "[Feature]: "
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: User need and proposed behavior
+      description: Explain who needs this feature and what it should do.
+    validations:
+      required: true
+
+  - type: input
+    id: requirements
+    attributes:
+      label: Requirement and story IDs
+      placeholder: FR-ACA-001 / US-ACA-001
+
+  - type: dropdown
+    id: module
+    attributes:
+      label: Module
+      options:
+        - Academic
+        - Finance
+        - RPG World
+        - Gamification
+        - Persistence
+        - Cross-feature
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: State observable success and failure behavior.
+      placeholder: |
+        - Given ..., when ..., then ...
+        - Invalid input should ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope, dependencies and shared contracts
+      description: Identify included work, excluded work and dependencies.
+
+  - type: textarea
+    id: verification
+    attributes:
+      label: Validation plan and test-case IDs
+      description: Explain how the feature will be verified.
+    validations:
+      required: true
