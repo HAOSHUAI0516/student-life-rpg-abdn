@@ -1,0 +1,29 @@
+name: Engineering task
+description: Plan documentation, integration, tests or tooling work.
+title: "[Task]: "
+body:
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Intended outcome and deliverables
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+    validations:
+      required: true
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies, owner and affected modules
+
+  - type: textarea
+    id: verification
+    attributes:
+      label: Verification and documentation updates
+    validations:
+      required: true
