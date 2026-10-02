@@ -1,32 +1,54 @@
 # Delivery Roadmap
 
-> Phases use acceptance gates, not invented dates or completion claims.
+Application development has not started. Start a new shared Flutter baseline. Existing images are reusable assets, subject to asset checks. Actual source directories, run commands and executed test results remain blank until code exists and verification is performed.
 
-| Phase | Deliverables | Exit gate |
+## Course deadlines
+
+Source: supplied JC2001 assessment screenshot. All deadlines are 23:59 China Standard Time in 2026.
+
+| Submission | Official deadline | Weight within group project |
 | --- | --- | --- |
-| Foundation | Product baseline, architecture, collaboration guide, issue/PR templates and test specifications | Team reviews scope and identifies open decisions |
-| Runnable baseline | Import existing app; record real structure, versions and setup | Clean checkout starts on agreed target |
-| Connected Alpha | Complete P0 academic, finance, persistence and progression journeys | Core user journeys work after restart |
-| Verified demo | Run planned checks, address blocking defects, add applicable CI, screenshots and demo | P0 evidence names revision and environment |
-| Cloud evaluation | Assess identity, sync and backend scope | Approved decision before cloud implementation |
+| Proposal | Sep 25 | 0%, mandatory; submission status not verified here |
+| Project Update 1 | Oct 12 | 0% |
+| Project Update 2 | Nov 2 | 0% |
+| Project Update 3 | Nov 23 | 0% |
+| Project Update 4 | Dec 7 | 0% |
+| Technical report | Dec 14 | 50% |
+| Proof-of-Concept software | Dec 14 | 30% |
+| Presentation submission | Dec 14 | 20% |
 
-## Recommended work sequence
+At least three of four updates are mandatory; the team plans all four. Presentation submission deadline is confirmed, but the live presentation time and submission format must be checked separately in course instructions.
 
-Agree shared models and grading/reward policies first. Establish persistence and contracts. Develop academic, finance and RPG modules against those contracts. Integrate atomic completion and HUD updates. Execute acceptance tests, then polish the demo.
+## Internal delivery gates
 
-Document changes and code changes advance independently: specification completion does not imply feature completion. Existing work in an earlier repository must be imported and verified before its status is carried into this repository.
+| Period | Deliverable | Acceptance gate |
+| --- | --- | --- |
+| Oct 2–9 | New Flutter baseline, common models/contracts, routing, asset inventory, persistence proof | Clean checkout starts on Android and Windows; a synthetic record survives restart; versions and decisions recorded |
+| Oct 10–11 | Baseline review and Update 1 | Lead reviews actual evidence and honestly records unimplemented work |
+| Oct 12–25 | Movement/interaction and academic/task/event/finance CRUD | Valid operations, invalid-input handling and restart persistence verified |
+| Oct 26–Nov 8 | Timetable, calendar/timeline, GPA, conflicts, budgets, HUD and dashboard | Connected journeys use real repository data and consistent shared models |
+| Nov 9–22 | Scheduling, simulation/feasibility, recurrence, progression, charts and backup | Positive, negative and boundary cases verified; new features freeze Nov 22 |
+| Nov 23–Dec 3 | Integration, regression, platform builds and defect fixes | End-to-end journeys pass on Android and Windows; blocking defects resolved |
+| Dec 4–11 | Final software, manual, report and presentation | Final build installation, artifact checklist and rehearsal completed; lead signs off |
+| Dec 12–14 | Submission buffer | Verify uploaded artifacts and retain submission receipts before official cutoff |
 
-## Release checklist
+Tests accompany each implementation PR; integration is continuous. Advanced algorithms can be developed against agreed contracts while UI work proceeds. Cloud accounts/backend/synchronization are outside this delivery baseline.
 
-- P0 requirements verified; P1 omissions disclosed.
-- Setup checked by a teammate from a clean checkout.
-- Test evidence identifies the demo revision and target.
-- Screenshots and demo represent that revision.
-- Asset sources and permissions documented.
-- Known limitations recorded without hiding failed behavior.
+## Updates and report evidence
 
-## Tracking
+| Internal ready date | Official date | Evidence |
+| --- | --- | --- |
+| Oct 11 | Oct 12 | Scope, allocation, architecture, baseline and actual status |
+| Nov 1 | Nov 2 | Foundation results, core progress, tests and blockers |
+| Nov 22 | Nov 23 | Feature inventory, integration and remaining defects |
+| Dec 6 | Dec 7 | Release candidate, regression and report/demo readiness |
 
-Use issues and milestones for delivery. Link requirements and PRs in each issue; keep a shared planning record consistent with GitHub. A milestone closes only after its exit gate is satisfied.
+Each member contributes report material weekly. Report outline: Oct 9. Module/algorithm draft: Nov 22. Complete report: Dec 6. Final version: Dec 11. Include requirements, design rationale, implementation, test evidence, evaluation, limitations and contributions. Check the course rubric before finalizing its structure.
 
-[Responsibilities](team.md) · [Risks](risks.md) · [Management index](README.md)
+## Review and release
+
+Submit milestone PRs two days before acceptance. The lead reviews daily; authors fix their own issues. Changes by the lead receive teammate review. Acceptance requires evidence, not merely a merged PR. If a feature slips, raise it immediately and replan dependencies; do not silently remove proposal commitments.
+
+Release includes Android Release APK, Windows Release package, source, user documentation, technical report and presentation materials. Record asset attribution and known limitations; ensure a teammate can reproduce setup from a clean checkout. Actual commands and results are recorded only after execution.
+
+[Responsibilities](team.md) · [Baseline tasks](baseline-issues.md) · [Management index](README.md)
